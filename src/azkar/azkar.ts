@@ -3,10 +3,10 @@ import { AzkarCategoriesEnum } from '../types/azkar-categories.enum';
 import { Zikr } from '../types/zikr';
 
 export class Azkar {
-  private azkars: AzkarCollectionType;
+  private azkarCollection: AzkarCollectionType;
 
   constructor() {
-    this.azkars = AzkarCollection;
+    this.azkarCollection = AzkarCollection;
   }
 
   /**
@@ -15,7 +15,7 @@ export class Azkar {
    * @returns Zikr[] - List of azkars in the category or undefined
    */
   public getByCategory(category: AzkarCategoriesEnum): Zikr[] {
-    return this.azkars[category];
+    return this.azkarCollection[category];
   }
 
   /**
@@ -34,7 +34,7 @@ export class Azkar {
    * @returns {Map<string, Zikr[]>} - Map of all azkars by category
    */
   public getAll(): Map<string, Zikr[]> {
-    return new Map(Object.entries(this.azkars));
+    return new Map(Object.entries(this.azkarCollection));
   }
 
   /**
@@ -42,7 +42,7 @@ export class Azkar {
    * @returns {Zikr} - Random azkar
    */
   public getRandom(): Zikr {
-    const allAzkars = Object.values(this.azkars).flat();
+    const allAzkars = Object.values(this.azkarCollection).flat();
     return this.randomValueFromArray(allAzkars);
   }
 

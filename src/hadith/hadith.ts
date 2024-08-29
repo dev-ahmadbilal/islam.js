@@ -1,74 +1,12 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { HadithBook } from '../types/hadith.enum';
 import { HadithLangEnum } from '../types/hadith-lang.enum';
-
-const hadithBookLanguages: Record<HadithBook, HadithLangEnum[]> = {
-  [HadithBook.AbuDawud]: [
-    HadithLangEnum.Arabic,
-    HadithLangEnum.Bengali,
-    HadithLangEnum.English,
-    HadithLangEnum.Indonesian,
-    HadithLangEnum.Russian,
-    HadithLangEnum.Turkish,
-    HadithLangEnum.Urdu,
-  ],
-  [HadithBook.Bukhari]: [
-    HadithLangEnum.Arabic,
-    HadithLangEnum.Bengali,
-    HadithLangEnum.English,
-    HadithLangEnum.Indonesian,
-    HadithLangEnum.Russian,
-    HadithLangEnum.Tamil,
-    HadithLangEnum.Turkish,
-    HadithLangEnum.Urdu,
-  ],
-  [HadithBook.Dehlawi]: [HadithLangEnum.Arabic, HadithLangEnum.English],
-  [HadithBook.IbnMajah]: [
-    HadithLangEnum.Arabic,
-    HadithLangEnum.Bengali,
-    HadithLangEnum.English,
-    HadithLangEnum.Indonesian,
-    HadithLangEnum.Turkish,
-    HadithLangEnum.Urdu,
-  ],
-  [HadithBook.MuwattaMalik]: [
-    HadithLangEnum.Arabic,
-    HadithLangEnum.English,
-    HadithLangEnum.Turkish,
-    HadithLangEnum.Urdu,
-  ],
-  [HadithBook.Muslim]: [
-    HadithLangEnum.Arabic,
-    HadithLangEnum.Bengali,
-    HadithLangEnum.English,
-    HadithLangEnum.Indonesian,
-    HadithLangEnum.Russian,
-    HadithLangEnum.Tamil,
-    HadithLangEnum.Turkish,
-    HadithLangEnum.Urdu,
-  ],
-  [HadithBook.Nasai]: [
-    HadithLangEnum.Arabic,
-    HadithLangEnum.Bengali,
-    HadithLangEnum.English,
-    HadithLangEnum.Indonesian,
-    HadithLangEnum.Russian,
-    HadithLangEnum.Tamil,
-    HadithLangEnum.Turkish,
-    HadithLangEnum.Urdu,
-  ],
-  [HadithBook.Tirmidhi]: [
-    HadithLangEnum.Arabic,
-    HadithLangEnum.Bengali,
-    HadithLangEnum.English,
-    HadithLangEnum.Indonesian,
-    HadithLangEnum.Russian,
-    HadithLangEnum.Turkish,
-    HadithLangEnum.Urdu,
-  ],
-  [HadithBook.Nawawi40]: [HadithLangEnum.Arabic, HadithLangEnum.Bengali, HadithLangEnum.English],
-  [HadithBook.Qudsi]: [HadithLangEnum.Arabic, HadithLangEnum.English],
-};
+import { hadithBookLanguages } from './hadith-book-lang-mapper';
+import { HadithObject } from '../types/hadith-object';
+import { HadithApiResponse, HadithEditionApiResponse, HadithInfoApiResponse } from '../types/hadith-api-response';
+import * as HadithMappers from './hadith-response-mappers';
+import { HadithInfo } from '../types';
+import { HadithBySection } from '../types/hadith-by-section';
+import { HadithEdition } from '../types/hadith-edition';
 
 export class Hadith {
   private baseUrl: string;
@@ -98,7 +36,7 @@ export class Hadith {
    * @param prettified - Whether to fetch the prettified JSON (default is true).
    * @returns A promise that resolves with the fetched data.
    */
-  public async getAllEditions(prettified: boolean = true): Promise<any> {
+  private async getAllEditions(prettified: boolean = true) {
     const url = `${this.baseUrl}/editions${prettified ? '.json' : '.min.json'}`;
     return this.fetchData(url);
   }
@@ -109,10 +47,11 @@ export class Hadith {
    * @param lang - The language of the Hadith edition (optional).
    * @returns A promise that resolves with the fetched data.
    */
-  public async getEdition(book: HadithBook, lang?: HadithLangEnum): Promise<any> {
+  public async getEdition(book: HadithBook, lang?: HadithLangEnum): Promise<HadithEdition> {
     const slug = this.getEditionSlug(book, lang);
     const url = `${this.baseUrl}/editions/${slug}.json`;
-    return this.fetchData(url);
+    const resp = (await this.fetchData(url)) as HadithEditionApiResponse;
+    return HadithMappers.mapHadithEditionResponse(resp);
   }
 
   /**
@@ -122,10 +61,11 @@ export class Hadith {
    * @param lang - The language of the Hadith edition (optional).
    * @returns A promise that resolves with the fetched data.
    */
-  public async getHadith(book: HadithBook, hadithNo: number, lang?: HadithLangEnum): Promise<any> {
+  public async getHadith(book: HadithBook, hadithNo: number, lang?: HadithLangEnum): Promise<HadithObject> {
     const slug = this.getEditionSlug(book, lang);
     const url = `${this.baseUrl}/editions/${slug}/${hadithNo}.json`;
-    return this.fetchData(url);
+    const resp = (await this.fetchData(url)) as HadithApiResponse;
+    return HadithMappers.mapHadithResponse(resp);
   }
 
   /**
@@ -135,19 +75,21 @@ export class Hadith {
    * @param lang - The language of the Hadith edition (optional).
    * @returns A promise that resolves with the fetched data.
    */
-  public async getSection(book: HadithBook, sectionNo: number, lang?: HadithLangEnum): Promise<any> {
+  public async getSection(book: HadithBook, sectionNo: number, lang?: HadithLangEnum): Promise<HadithBySection> {
     const slug = this.getEditionSlug(book, lang);
     const url = `${this.baseUrl}/editions/${slug}/sections/${sectionNo}.json`;
-    return this.fetchData(url);
+    const resp = (await this.fetchData(url)) as HadithApiResponse;
+    return HadithMappers.mapHadithSectionResponse(resp, sectionNo);
   }
 
   /**
    * Fetches general information about the available Hadith books.
-   * @returns A promise that resolves with the fetched data.
+   * @returns A promise that resolves with the type HadithInfo.
    */
-  public async getInfo(): Promise<any> {
+  public async getBooksInfo(): Promise<HadithInfo> {
     const url = `${this.baseUrl}/info.json`;
-    return this.fetchData(url);
+    const resp = (await this.fetchData(url)) as HadithInfoApiResponse;
+    return HadithMappers.mapHadithInfoResponse(resp);
   }
 
   /**
@@ -155,7 +97,7 @@ export class Hadith {
    * @param url - The URL to fetch data from.
    * @returns A promise that resolves with the fetched data or throws an error if the fetch fails.
    */
-  private async fetchData(url: string): Promise<any> {
+  private async fetchData(url: string) {
     try {
       const response = await fetch(url);
       if (!response.ok) {
