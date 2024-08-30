@@ -29,11 +29,11 @@ export class Quran {
 
   /**
    * Get a Chapter by its name.
-   * @param name - The name of the Chapter in Arabic.
+   * @param name - The name of the Chapter in English.
    * @returns The Chapter object or undefined if not found.
    */
   public getChapterByName(name: string): Chapter | undefined {
-    return this.quran.find((obj) => obj.name === name);
+    return this.quran.find((obj) => obj.englishName === name);
   }
 
   /**

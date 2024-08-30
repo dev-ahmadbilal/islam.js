@@ -1,0 +1,42 @@
+{
+  "name": "islam.js",
+  "version": "1.0.0",
+  "description": "This is the initial commit.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "start": "npx ts-node src/test.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dev-ahmadbilal/islam.js.git"
+  },
+  "keywords": [
+    "islam.js",
+    "islam",
+    "quran",
+    "hadith",
+    "prayer",
+    "azkar"
+  ],
+  "author": "Ahmad Bilal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dev-ahmadbilal/islam.js/issues"
+  },
+  "homepage": "https://github.com/dev-ahmadbilal/islam.js#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.9.1",
+    "@types/node": "^22.5.0",
+    "eslint": "^9.9.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.9.0",
+    "prettier": "3.3.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.3.0"
+  }
+}

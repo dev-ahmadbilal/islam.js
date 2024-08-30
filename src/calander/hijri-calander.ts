@@ -28,7 +28,7 @@ export class HijriCalendar {
       if (!response.ok) {
         throw new Error(`Failed to fetch Hijri date by location: ${response.statusText}`);
       }
-      const data: PrayerApiResponse = await response.json();
+      const data = (await response.json()) as PrayerApiResponse;
       return data.data.date.hijri;
     } catch (error) {
       console.error(error);
@@ -50,7 +50,7 @@ export class HijriCalendar {
       if (!response.ok) {
         throw new Error(`Failed to fetch Hijri date by city: ${response.statusText}`);
       }
-      const data: PrayerApiResponse = await response.json();
+      const data = (await response.json()) as PrayerApiResponse;
       return data.data.date.hijri;
     } catch (error) {
       console.error(error);
