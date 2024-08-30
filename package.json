@@ -11,8 +11,8 @@
     "clean": "rm -rf ./lib/",
     "release": "semantic-release",
     "prepare": "husky install",
-    "lint": "eslint",
-    "lint:fix": "eslint --fix",
+    "lint": "eslint ./src/",
+    "lint:fix": "eslint ./src/ --fix",
     "start": "npx ts-node src/test.ts",
     "test": "jest --coverage"
   },

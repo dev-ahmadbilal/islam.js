@@ -1,23 +1,30 @@
 #!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
 # Run linting
 npm run lint
 
-echo "Linting passed. Proceeding with the unit tests."
+# Get the list of changed files in the commit
+CHANGED_FILES=$(git diff --cached --name-only)
 
-# Run NestJS unit tests
-echo "Running NestJS unit tests..."
-npm run test
+# Check if any of the changed files are under the `src` folder
+if echo "$CHANGED_FILES" | grep -q '^src/'; then
+  echo "Changes detected in the src folder. Running unit tests..."
 
-# Capture the exit code of the tests
-TEST_RESULT=$?
+  # Run islam.js unit tests
+  echo "Running islam.js unit tests..."
+  npm run test
 
-# Check if tests passed
-if [ $TEST_RESULT -ne 0 ]; then
-  echo "Tests failed. Please fix the issues before committing."
-  exit $TEST_RESULT
+  # Capture the exit code of the tests
+  TEST_RESULT=$?
+
+  # Check if tests passed
+  if [ $TEST_RESULT -ne 0 ]; then
+    echo "Tests failed. Please fix the issues before committing."
+    exit $TEST_RESULT
+  fi
+
+  echo "Tests passed. Proceeding with the commit."
+else
+  echo "No changes detected in the src folder. Skipping unit tests."
 fi
 
-echo "Tests passed. Proceeding with the commit."
 exit 0
