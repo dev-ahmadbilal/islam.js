@@ -476,16 +476,16 @@ This package utilizes the following resources:
 - **Hadith Collections:** [Hadith API by fawazahmed](https://github.com/fawazahmed0/hadith-api)  
 - **Hijri Calendar and Prayer Times:** [Aladhan Prayer Times API](https://aladhan.com/prayer-times-api)
 
-We are grateful to these resources for making their data available for public use.
+I am grateful to these resources for making their data available for public use.
 
 
 [build-img]:https://github.com/dev-ahmadbilal/islam.js/actions/workflows/release.yml/badge.svg
 [build-url]:https://github.com/dev-ahmadbilal/islam.js/actions/workflows/release.yml
-[npm-img]:https://img.shields.io/npm/v/typescript-npm-package-template
-[npm-url]:https://www.npmjs.com/package/typescript-npm-package-template
-[issues-img]:https://img.shields.io/github/issues/ryansonshine/typescript-npm-package-template
+[npm-img]:https://img.shields.io/npm/v/islam.js
+[npm-url]:https://www.npmjs.com/package/islam.js
+[issues-img]:https://img.shields.io/github/issues/dev-ahmadbilal/islam.js
 [issues-url]:https://github.com/dev-ahmadbilal/islam.js/issues
-[codecov-img]:https://codecov.io/gh/ryansonshine/typescript-npm-package-template/branch/main/graph/badge.svg
-[codecov-url]:https://codecov.io/gh/ryansonshine/typescript-npm-package-template
+[codecov-img]:https://codecov.io/gh/dev-ahmadbilal/islam.js/branch/main/graph/badge.svg
+[codecov-url]:https://codecov.io/gh/dev-ahmadbilal/islam.js
 [semantic-release-img]:https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
 [semantic-release-url]:https://github.com/semantic-release/semantic-release
