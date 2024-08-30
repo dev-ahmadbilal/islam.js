@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/dev-ahmadbilal/islam.js/compare/v1.0.0...v1.0.1) (2024-08-30)
+
+
+### Bug Fixes
+
+* fix comments in supplicaton class ([7c1975b](https://github.com/dev-ahmadbilal/islam.js/commit/7c1975bd6660d12d57f51eeeabd59fbc997acb4f))
+
 # 1.0.0 (2024-08-30)
 
 
