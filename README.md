@@ -344,7 +344,7 @@ const date = '30-08-2024';
 const latitude = 31.52037;
 const longitude = 74.358749;
 
-const prayerTimings = prayer.getPrayerTimesByLocation(date, latitude, longitude);
+const prayerTimings = await prayer.getPrayerTimesByLocation(date, latitude, longitude);
 console.log(prayerTimings);
 
 //Output
@@ -369,7 +369,7 @@ import { Prayer } from 'islam.js';
 const prayer = new Prayer();
 const city = 'Dubai';
 const country = 'United Arab Emirates';
-const prayerTimings = prayer.getPrayerTimesByCity(city, country)
+const prayerTimings = await prayer.getPrayerTimesByCity(city, country)
 console.log(prayerTimings);
 
 //Output
@@ -392,11 +392,11 @@ console.log(prayerTimings);
 #### Get hijri calander date by location
 ```ts
 import { HijriCalendar } from 'islam.js';
-const calendar = new HijriCalendar();
+const calender = new HijriCalendar();
 const date = '30-08-2024';
 const latitude = 31.52037;
 const longitude = 74.358749;
-const hijriDate = calander.getHijriDateByLocation(date, latitude, longitude)
+const hijriDate = await calander.getHijriDateByLocation(date, latitude, longitude)
 console.log(hijriDate);
 
 //Output
@@ -424,10 +424,10 @@ console.log(hijriDate);
 #### Get hijri calander date by city
 ```ts
 import { HijriCalendar } from 'islam.js';
-const calendar = new HijriCalendar();
+const calender = new HijriCalendar();
 const city = 'Dubai';
 const country = 'United Arab Emirates';
-const hijriDate = calander.getHijriDateByCity(city, country);
+const hijriDate = await calander.getHijriDateByCity(city, country);
 console.log(hijriDate);
 
 //Output
