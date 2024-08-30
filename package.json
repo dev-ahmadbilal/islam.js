@@ -1,9 +1,15 @@
 {
   "name": "islam.js",
   "version": "1.0.0",
-  "description": "This is the initial commit.",
-  "main": "index.js",
+  "description": "A comprehensive JavaScript package offering Quranic text with multiple dialects (Hafs and Warsh), translations in over 20 languages, 28 Tafseers, Hadith collections with multiple translations, Dua and Azkar in 134 categories, prayer timings, and Hijri calendar support. Perfect for developers building Islamic applications and tools.",
+  "main": "./lib/index.js",
+  "files": [
+    "lib/**/*"
+  ],
   "scripts": {
+    "build": "tsc --project tsconfig.build.json",
+    "clean": "rm -rf ./lib/",
+    "release": "semantic-release",
     "lint": "eslint",
     "lint:fix": "eslint --fix",
     "start": "npx ts-node src/test.ts",
@@ -21,7 +27,11 @@
     "prayer",
     "azkar"
   ],
-  "author": "Ahmad Bilal",
+  "author":{
+    "name": "Ahmad Bilal",
+    "email": "ahmadbilal.3491@gmail.com",
+    "url": "https://github.com/dev-ahmadbilal"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/dev-ahmadbilal/islam.js/issues"
@@ -29,12 +39,16 @@
   "homepage": "https://github.com/dev-ahmadbilal/islam.js#readme",
   "devDependencies": {
     "@eslint/js": "^9.9.1",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/npm": "^12.0.1",
     "@types/node": "^22.5.0",
     "eslint": "^9.9.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "globals": "^15.9.0",
     "prettier": "3.3.3",
+    "semantic-release": "^24.1.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.5.4",
     "typescript-eslint": "^8.3.0"
