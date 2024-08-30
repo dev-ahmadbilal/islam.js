@@ -10,7 +10,7 @@ export class Azkar {
   }
 
   /**
-   * Get a category from the categories
+   * Get a supplications by category
    * @param {AzkarCategoriesEnum} category - Category enum or string key
    * @returns Zikr[] - List of azkars in the category or undefined
    */
@@ -20,7 +20,7 @@ export class Azkar {
 
   /**
    * Get a random azkar from a specific category or overall
-   * @param {object} input - Input object containing category
+   * @param {AzkarCategoriesEnum} category - category
    * @returns {Zikr} - Random azkar
    * @throws {Error} - If category is not found
    */
