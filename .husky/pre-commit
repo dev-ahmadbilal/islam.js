@@ -1,0 +1,23 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+# Run linting
+npm run lint
+
+echo "Linting passed. Proceeding with the unit tests."
+
+# Run NestJS unit tests
+echo "Running NestJS unit tests..."
+npm run test
+
+# Capture the exit code of the tests
+TEST_RESULT=$?
+
+# Check if tests passed
+if [ $TEST_RESULT -ne 0 ]; then
+  echo "Tests failed. Please fix the issues before committing."
+  exit $TEST_RESULT
+fi
+
+echo "Tests passed. Proceeding with the commit."
+exit 0
