@@ -452,6 +452,13 @@ console.log(hijriDate);
    "holidays":[]
 }
 ```
+## Disclaimer
+
+**islam.js** is an open-source package created to provide easy access to various Islamic resources such as Quran, Hadith, Dua, and Azkar. This package is not an authoritative source on Islam and should not be taken as a definitive representation of the religion. 
+
+I have made every effort to use authentic sources, but as with any human endeavor, there may be mistakes or inaccuracies. Users are encouraged to consult scholars or authentic religious sources for comprehensive understanding and verification. 
+
+By using this package, you acknowledge that it is provided as-is, and you agree to use it responsibly.
 
 ## License
 
