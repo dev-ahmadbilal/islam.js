@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/dev-ahmadbilal/islam.js/compare/v1.0.1...v1.0.2) (2024-09-02)
+
+
+### Bug Fixes
+
+* add disclaimer in readme ([c7c1e26](https://github.com/dev-ahmadbilal/islam.js/commit/c7c1e267a2609d53885c03189e7f45f7716a9dd2))
+
 ## [1.0.1](https://github.com/dev-ahmadbilal/islam.js/compare/v1.0.0...v1.0.1) (2024-08-30)
 
 
