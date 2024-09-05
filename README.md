@@ -460,6 +460,32 @@ I have made every effort to use authentic sources, but as with any human endeavo
 
 By using this package, you acknowledge that it is provided as-is, and you agree to use it responsibly.
 
+## Future Roadmap
+
+### Asset Management Optimization
+
+Currently, the `islam.js` package includes a large `assets` folder, which increases the package size to approximately 33MB. To improve the efficiency of package distribution and installation, the following steps are planned:
+
+1. **Compression of Assets:**
+   - **Objective:** Reduce the overall package size by compressing the assets folder before publishing the package.
+   - **Approach:** Implement a compression strategy to package assets into a compressed format (e.g., ZIP, GZIP) that will be included in the published package.
+   - **Benefit:** This will significantly decrease the package size, making it more manageable and quicker to download for users.
+
+2. **Automatic Decompression on Installation:**
+   - **Objective:** Automatically decompress the assets folder during the installation process.
+   - **Approach:** Develop a post-install script or use existing tools to decompress the assets once the package is installed.
+   - **Benefit:** This ensures that users receive the full set of assets without manual intervention while maintaining a smaller initial package size.
+
+### Test Coverage
+I have setup the baseline for tests but currently the test coverage is 38%. We need to increase it to at least 80%. 
+1. **Unit Tests:**
+   - **Objective:** Enhance unit test coverage.
+   - **Approach:** Implement comprehensive unit tests using frameworks like Jest or Mocha. Focus on critical functionalities and edge cases to ensure robust testing.
+   - **Benefit:** Improved test coverage will increase confidence in code stability and reliability, ensuring that all functionalities perform as expected.
+
+These enhancements aim to streamline the package management process, improve user experience, and ensure that `islam.js` remains a robust and efficient tool for Islamic applications.
+I welcome contributions to help me achieve these goals. If you're interested in contributing, please check out our [contributing guidelines](CONTRIBUTING.md) and get in touch!
+
 ## License
 
 This package is freely available for everyone to use. If you find it beneficial, please remember me in your prayers.  
