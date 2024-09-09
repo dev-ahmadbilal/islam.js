@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/dev-ahmadbilal/islam.js/compare/v1.0.2...v1.1.0) (2024-09-05)
+
+
+### Features
+
+* **docs:** add contribution guide and future roadmap ([a020100](https://github.com/dev-ahmadbilal/islam.js/commit/a020100b511c4fde5e6db6465708424ec1dab111))
+
 ## [1.0.2](https://github.com/dev-ahmadbilal/islam.js/compare/v1.0.1...v1.0.2) (2024-09-02)
 
 

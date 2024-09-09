@@ -1,6 +1,6 @@
 {
   "name": "islam.js",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "A comprehensive JavaScript package offering Quranic text with multiple dialects (Hafs and Warsh), translations in over 20 languages, 28 Tafseers, Hadith collections with multiple translations, Dua and Azkar in 134 categories, prayer timings, and Hijri calendar support. Perfect for developers building Islamic applications and tools.",
   "main": "./lib/index.js",
   "files": [
@@ -64,7 +64,7 @@
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/npm": "^12.0.1",
     "@types/jest": "^29.5.12",
-    "@types/node": "^22.5.2",
+    "@types/node": "^22.5.4",
     "commitlint": "^19.4.1",
     "eslint": "^9.9.1",
     "eslint-config-prettier": "^9.1.0",
