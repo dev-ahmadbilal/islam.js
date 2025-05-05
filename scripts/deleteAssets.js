@@ -1,11 +1,8 @@
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+/* eslint-disable no-undef, @typescript-eslint/no-require-imports */
+const fs = require('fs');
+const path = require('path');
 
-// Define __dirname manually for ES modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
+// __dirname is automatically available in CommonJS
 const assetsZipPath = path.join(__dirname, '../assets.zip');
 
 function deleteAssetsZip() {
