@@ -1,12 +1,9 @@
-import fs from 'fs';
-import path from 'path';
-import AdmZip from 'adm-zip';
-import { fileURLToPath } from 'url';
+/* eslint-disable no-undef, @typescript-eslint/no-require-imports */
+const fs = require('fs');
+const path = require('path');
+const AdmZip = require('adm-zip');
 
-// Define __dirname manually for ES modules
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
+// __dirname is already available in CommonJS
 const assetsZipPath = path.join(__dirname, '../assets.zip'); // Moved outside src
 const assetsDir = path.join(__dirname, '../src'); // Destination folder
 
