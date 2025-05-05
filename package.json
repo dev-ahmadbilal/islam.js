@@ -5,7 +5,8 @@
   "main": "./lib/index.js",
   "files": [
     "lib/**/*",
-    "scripts/extractAssets.js"
+    "scripts/extractAssets.js",
+    "scripts/deleteAssets.js"
   ],
   "scripts": {
     "prebuild": "npm run extract-assets",
