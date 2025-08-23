@@ -1,6 +1,7 @@
 # islam.js
 [![npm package][npm-img]][npm-url]
 [![Build Status][build-img]][build-url]
+[![Downloads][download-img]][npm-url]
 [![Issues][issues-img]][issues-url]
 [![Code Coverage][codecov-img]][codecov-url]
 [![Semantic Release][semantic-release-img]][semantic-release-url]
@@ -516,6 +517,7 @@ I am grateful to these resources for making their data available for public use.
 [build-url]:https://github.com/dev-ahmadbilal/islam.js/actions/workflows/release.yml
 [npm-img]:https://img.shields.io/npm/v/islam.js
 [npm-url]:https://www.npmjs.com/package/islam.js
+[download-img]: https://badgen.net/npm/dt/islam.js
 [issues-img]:https://img.shields.io/github/issues/dev-ahmadbilal/islam.js
 [issues-url]:https://github.com/dev-ahmadbilal/islam.js/issues
 [codecov-img]:https://codecov.io/gh/dev-ahmadbilal/islam.js/branch/main/graph/badge.svg
