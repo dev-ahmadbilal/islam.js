@@ -23,4 +23,9 @@ function extractAssets() {
   }
 }
 
-extractAssets();
+// Export for testing, execute for runtime
+if (require.main === module) {
+  extractAssets();
+}
+
+module.exports = { extractAssets, assetsZipPath, assetsDir };

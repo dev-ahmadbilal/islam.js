@@ -6,7 +6,8 @@
   "files": [
     "lib/**/*",
     "scripts/extractAssets.js",
-    "scripts/deleteAssets.js"
+    "scripts/deleteAssets.js",
+    "scripts/cleanupAssets.js"
   ],
   "scripts": {
     "prebuild": "npm run extract-assets",
@@ -19,8 +20,10 @@
     "start": "npx ts-node src/test.ts",
     "test": "jest --coverage",
     "extract-assets": "node scripts/extractAssets.js",
-    "delete-zip": "node scripts/delete-zip.js",
+    "delete-zip": "node scripts/deleteAssets.js",
+    "cleanup-assets": "node scripts/cleanupAssets.js",
     "pretest": "npm run extract-assets",
+    "posttest": "npm run cleanup-assets",
     "postinstall": "npm run extract-assets && npm run delete-zip"
   },
   "repository": {
