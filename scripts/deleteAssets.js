@@ -19,4 +19,9 @@ function deleteAssetsZip() {
   }
 }
 
-deleteAssetsZip();
+// Export for testing, execute for runtime
+if (require.main === module) {
+  deleteAssetsZip();
+}
+
+module.exports = { deleteAssetsZip, assetsZipPath };
