@@ -4,13 +4,9 @@
   "description": "A comprehensive JavaScript package offering Quranic text with multiple dialects (Hafs and Warsh), translations in over 20 languages, 28 Tafseers, Hadith collections with multiple translations, Dua and Azkar in 134 categories, prayer timings, and Hijri calendar support. Perfect for developers building Islamic applications and tools.",
   "main": "./lib/index.js",
   "files": [
-    "lib/**/*",
-    "scripts/extractAssets.js",
-    "scripts/deleteAssets.js",
-    "scripts/cleanupAssets.js"
+    "lib/**/*"
   ],
   "scripts": {
-    "prebuild": "npm run extract-assets",
     "build": "tsc --project tsconfig.build.json",
     "clean": "rm -rf ./lib/",
     "release": "semantic-release",
@@ -18,13 +14,7 @@
     "lint": "eslint ./src/",
     "lint:fix": "eslint ./src/ --fix",
     "start": "npx ts-node src/test.ts",
-    "test": "jest --coverage",
-    "extract-assets": "node scripts/extractAssets.js",
-    "delete-zip": "node scripts/deleteAssets.js",
-    "cleanup-assets": "node scripts/cleanupAssets.js",
-    "pretest": "npm run extract-assets",
-    "posttest": "npm run cleanup-assets",
-    "postinstall": "npm run extract-assets && npm run delete-zip"
+    "test": "jest --coverage"
   },
   "repository": {
     "type": "git",
@@ -67,9 +57,6 @@
     "url": "https://github.com/dev-ahmadbilal/islam.js/issues"
   },
   "homepage": "https://github.com/dev-ahmadbilal/islam.js#readme",
-  "dependencies": {
-    "adm-zip": "^0.5.10"
-  },
   "devDependencies": {
     "@commitlint/config-conventional": "^19.5.0",
     "@eslint/js": "^9.10.0",
@@ -77,7 +64,7 @@
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/npm": "^12.0.1",
     "@types/jest": "^29.5.13",
-    "@types/node": "^22.13.4",
+    "@types/node": "^22.5.4",
     "commitlint": "^19.5.0",
     "eslint": "^9.10.0",
     "eslint-config-prettier": "^9.1.0",
