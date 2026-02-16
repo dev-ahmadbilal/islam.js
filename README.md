@@ -1,7 +1,6 @@
 # islam.js
 [![npm package][npm-img]][npm-url]
 [![Build Status][build-img]][build-url]
-[![Downloads][download-img]][npm-url]
 [![Issues][issues-img]][issues-url]
 [![Code Coverage][codecov-img]][codecov-url]
 [![Semantic Release][semantic-release-img]][semantic-release-url]
@@ -463,6 +462,20 @@ By using this package, you acknowledge that it is provided as-is, and you agree 
 
 ## Future Roadmap
 
+### Asset Management Optimization
+
+Currently, the `islam.js` package includes a large `assets` folder, which increases the package size to approximately 33MB. To improve the efficiency of package distribution and installation, the following steps are planned:
+
+1. **Compression of Assets:**
+   - **Objective:** Reduce the overall package size by compressing the assets folder before publishing the package.
+   - **Approach:** Implement a compression strategy to package assets into a compressed format (e.g., ZIP, GZIP) that will be included in the published package.
+   - **Benefit:** This will significantly decrease the package size, making it more manageable and quicker to download for users.
+
+2. **Automatic Decompression on Installation:**
+   - **Objective:** Automatically decompress the assets folder during the installation process.
+   - **Approach:** Develop a post-install script or use existing tools to decompress the assets once the package is installed.
+   - **Benefit:** This ensures that users receive the full set of assets without manual intervention while maintaining a smaller initial package size.
+
 ### Test Coverage
 I have setup the baseline for tests but currently the test coverage is 38%. We need to increase it to at least 80%. 
 1. **Unit Tests:**
@@ -503,7 +516,6 @@ I am grateful to these resources for making their data available for public use.
 [build-url]:https://github.com/dev-ahmadbilal/islam.js/actions/workflows/release.yml
 [npm-img]:https://img.shields.io/npm/v/islam.js
 [npm-url]:https://www.npmjs.com/package/islam.js
-[download-img]: https://badgen.net/npm/dt/islam.js
 [issues-img]:https://img.shields.io/github/issues/dev-ahmadbilal/islam.js
 [issues-url]:https://github.com/dev-ahmadbilal/islam.js/issues
 [codecov-img]:https://codecov.io/gh/dev-ahmadbilal/islam.js/branch/main/graph/badge.svg
