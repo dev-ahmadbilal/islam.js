@@ -12,7 +12,7 @@ const AdmZip = jest.requireMock('adm-zip');
 
 // Require script after mocks are set up
 const script = require('../scripts/extractAssets');
-const { extractAssets, assetsZipPath, assetsDir } = script;
+const { extractAssets, assetsZipPath, assetsDir, isConsumerInstall, getExtractDestination } = script;
 
 describe('extractAssets script', () => {
   let consoleLogSpy: jest.SpyInstance;
@@ -106,9 +106,11 @@ describe('extractAssets script', () => {
 
   describe('path configuration', () => {
     test('should use correct paths', () => {
-      // Verify the paths are correctly set
       expect(assetsZipPath).toContain('assets.zip');
-      expect(assetsDir).toContain('src');
+      // Destination is src/ in repo, lib/ when in node_modules
+      const dest = getExtractDestination();
+      expect(dest).toContain(isConsumerInstall() ? 'lib' : 'src');
+      expect(assetsDir).toBe(dest);
     });
   });
 });

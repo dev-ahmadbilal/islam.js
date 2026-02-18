@@ -68,6 +68,9 @@ web_modules/
 # Output of 'npm pack'
 *.tgz
 
+# Created at publish only (repo keeps src/assets; zip is not committed)
+assets.zip
+
 # Yarn Integrity file
 .yarn-integrity
 
