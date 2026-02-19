@@ -7,7 +7,9 @@
 const { extractAssets, isConsumerInstall, shouldSkipExtraction } = require('./extractAssets');
 const { deleteAssetsZip } = require('./deleteAssets');
 
-if (!isConsumerInstall()) return;
-if (shouldSkipExtraction()) return;
-extractAssets();
-deleteAssetsZip();
+(function main() {
+  if (!isConsumerInstall()) return;
+  if (shouldSkipExtraction()) return;
+  extractAssets();
+  deleteAssetsZip();
+})();
