@@ -1,4 +1,5 @@
 # islam.js
+
 [![npm package][npm-img]][npm-url]
 [![Build Status][build-img]][build-url]
 [![Downloads][download-img]][npm-url]
@@ -6,13 +7,17 @@
 [![Code Coverage][codecov-img]][codecov-url]
 [![Semantic Release][semantic-release-img]][semantic-release-url]
 
+![islam.js](islam.js-horizontal.png)
+
 `islam.js` is a comprehensive JavaScript/TypeScript library designed for Islamic applications. It provides functionalities related to the Quran, Hadith, Dua & Azkar, Prayer Timings, and Hijri Calendar. This package offers multilingual support, a wide range of Tafseers, Hadith collections, and tools to enhance the development of Islamic software solutions.
+
+---
 
 ## Features
 
 - [**Quran:**](#1-quran)
   - Support for Dialects: Hafs and Warsh
-  - 20 Language Translations
+  - 28 Language Translations
   - 28 Tafseers (Commentaries) in different languages
 
 - [**Hadith:**](#2-hadith)
@@ -46,6 +51,40 @@ import { Quran, Hadith } from 'islam.js';
 ## Usage
 
 ### 1. Quran
+
+#### Supported Translation Languages
+
+| Language | `TranslationEnum` value |
+|---|---|
+| Albanian | `TranslationEnum.Albanian` |
+| Bulgarian | `TranslationEnum.Balgarian` |
+| Bengali | `TranslationEnum.Bengali` |
+| Chinese | `TranslationEnum.Chinese` |
+| Dutch | `TranslationEnum.Dutch` |
+| English | `TranslationEnum.English` |
+| French | `TranslationEnum.French` |
+| German | `TranslationEnum.German` |
+| Hindi | `TranslationEnum.Hindi` |
+| Indonesian | `TranslationEnum.Indonesian` |
+| Italian | `TranslationEnum.Italian` |
+| Japanese | `TranslationEnum.Japanese` |
+| Korean | `TranslationEnum.Korean` |
+| Norwegian | `TranslationEnum.Norwegian` |
+| Pashto | `TranslationEnum.Pashto` |
+| Persian | `TranslationEnum.Persian` |
+| Portuguese | `TranslationEnum.Portuguese` |
+| Punjabi | `TranslationEnum.Punjabi` |
+| Romanian | `TranslationEnum.Romanian` |
+| Russian | `TranslationEnum.Russian` |
+| Sindhi | `TranslationEnum.Sindhi` |
+| Somalian | `TranslationEnum.Somalian` |
+| Spanish | `TranslationEnum.Spanish` |
+| Tamil | `TranslationEnum.Tamil` |
+| Thai | `TranslationEnum.Thai` |
+| Turkish | `TranslationEnum.Turkish` |
+| Urdu | `TranslationEnum.Urdu` |
+| Uzbek | `TranslationEnum.Uzbek` |
+
 #### Get a chapter by index
 ```ts
 import { Quran } from 'islam.js';
@@ -461,18 +500,6 @@ I have made every effort to use authentic sources, but as with any human endeavo
 
 By using this package, you acknowledge that it is provided as-is, and you agree to use it responsibly.
 
-## Future Roadmap
-
-### Test Coverage
-I have setup the baseline for tests but currently the test coverage is 38%. We need to increase it to at least 80%. 
-1. **Unit Tests:**
-   - **Objective:** Enhance unit test coverage.
-   - **Approach:** Implement comprehensive unit tests using frameworks like Jest or Mocha. Focus on critical functionalities and edge cases to ensure robust testing.
-   - **Benefit:** Improved test coverage will increase confidence in code stability and reliability, ensuring that all functionalities perform as expected.
-
-These enhancements aim to streamline the package management process, improve user experience, and ensure that `islam.js` remains a robust and efficient tool for Islamic applications.
-I welcome contributions to help me achieve these goals. If you're interested in contributing, please check out our [contributing guidelines](CONTRIBUTING.md) and get in touch!
-
 ## License
 
 This package is freely available for everyone to use. If you find it beneficial, please remember me in your prayers.  
@@ -483,7 +510,8 @@ May Allah forgive my sins and have mercy on all of us. Ameen.
 If you have any questions, suggestions, or would like to collaborate, please feel free to reach out:
 
 - **Email:** [ahmadbilal.3491@gmail.com](mailto:ahmadbilal.3491@gmail.com)
-- **LinkedIn:** [Ahmad Bilal](https://www.linkedin.com/in/ahmad-bilal-920637165)
+- **LinkedIn:** [Ahmad Bilal](https://www.linkedin.com/in/dev-ahmad-bilal)
+- **Website:** [Ahmad Bilal](https://ahmad-bilal.vercel.app)
 
 I look forward to hearing from you!
 
@@ -491,7 +519,7 @@ I look forward to hearing from you!
 
 This package utilizes the following resources:
 
-- **Quran and Translations:** [Surah Quran](https://surahquran.com)  
+- **Quran and Translations:** [Surah Quran](https://surahquran.com), [Kaggle Datset](https://www.kaggle.com/datasets/yasirabdaali/the-holy-quran-in-44-languages?select=portuguese.elhayek.sql)  
 - **Tafseer (Commentaries):** [Tafsir API by spa5k](https://github.com/spa5k/tafsir_api)  
 - **Hadith Collections:** [Hadith API by fawazahmed](https://github.com/fawazahmed0/hadith-api)  
 - **Hijri Calendar and Prayer Times:** [Aladhan Prayer Times API](https://aladhan.com/prayer-times-api)
