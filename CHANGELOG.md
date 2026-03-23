@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/dev-ahmadbilal/islam.js/compare/v1.2.0...v1.3.0) (2026-03-23)
+
+
+### Features
+
+* add 9 more translations ([81a1073](https://github.com/dev-ahmadbilal/islam.js/commit/81a107390885630b29d905982c2881d33ae6a766))
+
 # [1.2.0](https://github.com/dev-ahmadbilal/islam.js/compare/v1.1.1...v1.2.0) (2026-03-23)
 
 
