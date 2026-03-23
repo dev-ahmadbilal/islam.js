@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/dev-ahmadbilal/islam.js/compare/v1.1.1...v1.2.0) (2026-03-23)
+
+
+### Features
+
+* trigger release ([4154d4f](https://github.com/dev-ahmadbilal/islam.js/commit/4154d4fac64d5c2dba3952342df24e7b96490a6a))
+
 ## [1.1.1](https://github.com/dev-ahmadbilal/islam.js/compare/v1.1.0...v1.1.1) (2026-03-23)
 
 
