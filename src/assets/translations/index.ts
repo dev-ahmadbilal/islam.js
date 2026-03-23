@@ -19,19 +19,36 @@ import { QuranThai } from './QuranThai';
 import { QuranTurkish } from './QuranTurkish';
 import { QuranUrdu } from './QuranUrdu';
 import { QuranEnglish } from './QuranEnglish';
+import { QuranAlbanian } from './QuranAlbani';
+import { QuranBulgarian } from './QuranBalgarian';
+import { QuranDutch } from './QuranDutch';
+import { QuranIndonesian } from './QuranIndonesian';
+import { QuranItalian } from './QuranItalian';
+import { QuranPortuguese } from './QuranPortuguese';
+import { QuranRomanian } from './QuranRomanian';
+import { QuranSomali } from './QuranSomali';
+import { QuranUzbek } from './QuranUzbek';
 
 const translations: Record<TranslationEnum, string[][]> = {
+  al: QuranAlbanian,
+  bg: QuranBulgarian,
   bn: QuranBengali,
   zh: QuranChinese,
+  nl: QuranDutch,
   en: QuranEnglish,
   fr: QuranFrench,
   de: QuranGerman,
   hi: QuranHindi,
+  id: QuranIndonesian,
+  it: QuranItalian,
   ja: QuranJapanese,
   ko: QuranKorean,
   no: QuranNorwegian,
   ps: QuranPashto,
   fa: QuranPersian,
+  pt: QuranPortuguese,
+  ro: QuranRomanian,
+  so: QuranSomali,
   pa: QuranPunjabi,
   ru: QuranRussian,
   sd: QuranSindhi,
@@ -40,6 +57,7 @@ const translations: Record<TranslationEnum, string[][]> = {
   th: QuranThai,
   tr: QuranTurkish,
   ur: QuranUrdu,
+  uz: QuranUzbek,
 };
 
 export default function getTranslation(lang: TranslationEnum) {
