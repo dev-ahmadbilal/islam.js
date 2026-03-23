@@ -5,26 +5,24 @@
   "main": "./lib/index.js",
   "files": [
     "lib/**/*",
+    "assets.zip",
     "scripts/extractAssets.js",
     "scripts/deleteAssets.js",
-    "scripts/cleanupAssets.js"
+    "scripts/postinstall.js"
   ],
   "scripts": {
-    "prebuild": "npm run extract-assets",
     "build": "tsc --project tsconfig.build.json",
     "clean": "rm -rf ./lib/",
     "release": "semantic-release",
     "prepare": "husky install",
+    "prepack": "node scripts/preparePackageForPublish.js",
     "lint": "eslint ./src/",
     "lint:fix": "eslint ./src/ --fix",
     "start": "npx ts-node src/test.ts",
     "test": "jest --coverage",
     "extract-assets": "node scripts/extractAssets.js",
     "delete-zip": "node scripts/deleteAssets.js",
-    "cleanup-assets": "node scripts/cleanupAssets.js",
-    "pretest": "npm run extract-assets",
-    "posttest": "npm run cleanup-assets",
-    "postinstall": "npm run extract-assets && npm run delete-zip"
+    "postinstall": "node scripts/postinstall.js"
   },
   "repository": {
     "type": "git",
