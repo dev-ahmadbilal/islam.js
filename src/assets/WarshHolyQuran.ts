@@ -6919,7 +6919,7 @@ export const WarshHolyQuran: Array<Chapter> = [
   },
 
   {
-    name: 'البرج',
+    name: 'البروج',
     type: 'مكيّة',
     englishName: 'Al-Boroj',
     number: 85,
